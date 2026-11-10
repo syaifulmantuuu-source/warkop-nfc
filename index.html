@@ -1,105 +1,190 @@
-<style>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paman & Bibi - Menu & Informasi</title>
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
         body {
-            background-color: #1c1917;
-            color: #f5f5f4;
-            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            margin: 0;
+            padding: 20px;
         }
         .container {
             width: 100%;
-            max-width: 400px;
-            background-color: #292524;
-            border: 1px solid #44403c;
-            border-radius: 16px;
-            padding: 24px;
-            box-sizing: border-box;
+            max-width: 420px;
+            background: #1e1e1e;
+            border-radius: 20px;
+            padding: 30px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             text-align: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            border: 1px solid #2d2d2d;
         }
-        .icon-box {
-            width: 70px;
-            height: 70px;
-            background-color: #d97706;
+        /* Bagian Logo */
+        .logo-container {
+            margin-bottom: 20px;
+        }
+        .logo-container img {
+            width: 90px;
+            height: 90px;
             border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto 16px auto;
-            font-size: 30px;
+            object-fit: cover;
+            background-color: #ffffff; /* Latar belakang putih agar logo kuning terlihat kontras */
+            padding: 5px;
+            border: 2px solid #ffcc00; /* Menyesuaikan warna kuning logo */
+            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.2);
         }
         h1 {
-            font-size: 22px;
-            color: #f59e0b;
-            margin: 8px 0 4px 0;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 5px;
         }
-        p {
-            font-size: 14px;
-            color: #a8a29e;
-            margin-bottom: 24px;
+        p.subtitle {
+            font-size: 0.9rem;
+            color: #aaaaaa;
+            margin-bottom: 12px;
         }
+        /* Kotak Waktu Real-Time */
+        .live-clock {
+            background: #27272a;
+            border: 1px solid #3f3f46;
+            border-radius: 10px;
+            padding: 8px 12px;
+            margin-bottom: 22px;
+            font-size: 0.8rem;
+            color: #ffcc00;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+        /* Tombol Tautan / Link */
         .btn-link {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            background-color: #44403c;
-            color: #f5f5f4;
-            padding: 14px 16px;
+            justify-content: space-between;
+            background: #2a2a2a;
+            color: #ffffff;
+            padding: 14px 18px;
             margin-bottom: 12px;
-            border-radius: 10px;
+            border-radius: 12px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            border: 1px solid #383838;
         }
         .btn-link:hover {
-            background-color: #d97706;
+            background: #333333;
+            border-color: #ffcc00;
+            transform: translateY(-2px);
         }
+        .btn-link span {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        /* Footer */
         .footer {
-            margin-top: 24px;
-            font-size: 12px;
-            color: #78716c;
+            margin-top: 25px;
+            font-size: 0.75rem;
+            color: #777777;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="icon-box">☕</div>
+        <!-- Logo Warkop -->
+        <div class="logo-container">
+            <img src="logo.jpg" alt="Logo Paman & Bibi">
+        </div>
         
-        <!-- Ganti Nama Warkop di Sini -->
-        <h1>PAMAN & BIBI</h1>
-        <p>Silakan pilih menu atau layanan di bawah ini</p>
+        <h1>Paman & Bibi</h1>
+        <p class="subtitle">Silakan pilih menu atau informasi di bawah ini</p>
 
-        <!-- 1. Tombol Menu (Ganti tanda # dengan Link PDF Menu / Google Drive / Katalog) -->
+        <!-- Widget Tanggal & Jam Real-Time WITA -->
+        <div id="realtime-clock" class="live-clock">Memuat Waktu...</div>
+
+        <!-- 1. Tombol Menu -->
         <a href="https://example.com/menu.pdf" target="_blank" class="btn-link">
-            <span>📖 Lihat Daftar Menu</span>
+            <span>☕ Lihat Daftar Menu</span>
             <span>&rsaquo;</span>
         </a>
 
-        <!-- 2. Tombol WiFi (Ganti password di dalam tanda kurung) -->
-        <a href="#" class="btn-link" onclick="alert('Password WiFi: kopidengkukis')">
-            <span>📶 Hubungkan ke WiFi</span>
+        <!-- 2. Tombol WiFi -->
+        <a href="#" class="btn-link" onclick="alert('Password WiFi: kopidengkukis'); return false;">
+            <span>📶 Sambungkan WiFi</span>
             <span>&rsaquo;</span>
         </a>
 
-        <!-- 3. Tombol Google Review (Ganti tanda # dengan link Google Maps Ulasan warkop) -->
-        <a href="https://www.google.com/maps/place/Paman+%26+Bibi/@0.5659529,123.0899503,86m/data=!3m1!1e3!4m16!1m7!3m6!1s0x327ed551cf2176fd:0x299c0d890ae5a20a!2sPaman+%26+Bibi!8m2!3d0.5658734!4d123.0902487!16s%2Fg%2F11s0knq61f!3m7!1s0x327ed551cf2176fd:0x299c0d890ae5a20a!8m2!3d0.5658734!4d123.0902487!9m1!1b1!16s%2Fg%2F11s0knq61f!5m1!1e2?entry=ttu&g_ep=EgoyMDI2MTEwNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn-link">
+        <!-- 3. Tombol Google Review -->
+        <a href="https://search.google.com/local/writereview?placeid=ChIJ_XYhz1HVfjIRCqLlCokNnCk&source=g.page.m.nr._&laa=nmx-review-solicitation-recommendation-card" target="_blank" class="btn-link">
             <span>⭐ Beri Ulasan Google</span>
             <span>&rsaquo;</span>
         </a>
 
-        <!-- 4. Tombol Instagram / WhatsApp (Ganti dengan link sosmed mereka) -->
+        <!-- 4. Tombol Media Sosial -->
         <a href="https://www.instagram.com/paman_bibi/" target="_blank" class="btn-link">
             <span>📸 Instagram Kami</span>
             <span>&rsaquo;</span>
         </a>
 
         <div class="footer">
-            Powered by NFC Solution &bull; Tap & Go
+            &copy; 2026 Paman & Bibi. All Rights Reserved.
         </div>
     </div>
 
+    <!-- Script JavaScript untuk Jam & Tanggal Real-Time Zona Waktu WITA -->
+    <script>
+        function updateClock() {
+            const now = new Date();
+            
+            // Format zona waktu WITA (Asia/Makassar)
+            const options = {
+                timeZone: 'Asia/Makassar',
+                weekday: 'long',
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false
+            };
+
+            const formatter = new Intl.DateTimeFormat('id-ID', options);
+            const parts = formatter.formatToParts(now);
+            
+            let weekday = '', day = '', month = '', year = '', hour = '', minute = '', second = '';
+            
+            parts.forEach(part => {
+                if (part.type === 'weekday') weekday = part.value;
+                if (part.type === 'day') day = part.value;
+                if (part.type === 'month') month = part.value;
+                if (part.type === 'year') year = part.value;
+                if (part.type === 'hour') hour = part.value;
+                if (part.type === 'minute') minute = part.value;
+                if (part.type === 'second') second = part.value;
+            });
+
+            const formattedString = ${weekday}, ${day} ${month} ${year} • ${hour}:${minute}:${second} WITA;
+            document.getElementById('realtime-clock').innerText = formattedString;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
 </body>
 </html>
